@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Никита · SMM и контент‑стратегия для цветочного бизнеса</title>
+<meta name="description" content="Никита, 24, Калининград. SMM‑менеджер и контент‑стратег для цветочного бизнеса: Reels, сетка, Stories, кросспостинг, дизайн‑макеты, промо‑акции. От флориста до управляющего сетью.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6EF;
+    --paper:#FFFFFF;
+    --ink:#26211C;
+    --muted:#7C7268;
+    --rose:#E09AB0;
+    --rose-deep:#C96F8C;
+    --leaf:#7E9B57;
+    --leaf-deep:#56703A;
+    --ochre:#E2A93B;
+    --wine:#9E2B3B;
+    --line:rgba(38,33,28,.10);
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--cream);
+    font-family:'Manrope',system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    line-height:1.5;
+  }
+  .serif{font-family:'Playfair Display',Georgia,serif}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(18px,5vw,40px);width:100%}
+
+  /* ===== липкая навигация ===== */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(140%) blur(12px);
+    -webkit-backdrop-filter:saturate(140%) blur(12px);
+    background:rgba(251,246,239,.78);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .logo{font-family:'Playfair Display',serif;font-weight:900;font-size:19px;letter-spacing:.02em;text-decoration:none}
+  .logo span{color:var(--rose-deep)}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{text-decoration:none;font-size:13.5px;font-weight:600;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{font-size:13px;font-weight:700;background:var(--ink);color:#fff;padding:9px 16px;border-radius:999px;text-decoration:none;transition:transform .2s,opacity .2s}
+  .nav-cta:hover{transform:translateY(-1px);opacity:.92}
+
+  /* ===== секции ===== */
+  section{position:relative;overflow:hidden;padding:clamp(64px,11vw,128px) 0;scroll-margin-top:70px}
+  .blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.5;z-index:0;pointer-events:none}
+  .blob.b1{width:min(560px,80vw);aspect-ratio:1;background:radial-gradient(circle at 30% 30%,#F6D6E0,transparent 70%);top:-160px;right:-140px}
+  .blob.b2{width:min(520px,75vw);aspect-ratio:1;background:radial-gradient(circle at 40% 40%,#DCE7C8,transparent 70%);bottom:-180px;left:-160px}
+  .blob.b3{width:min(360px,55vw);aspect-ratio:1;background:radial-gradient(circle at 40% 40%,#F6E2B6,transparent 70%);top:38%;left:-130px;opacity:.4}
+  .inner{position:relative;z-index:2}
+
+  .tag{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.14em;
+       text-transform:uppercase;color:var(--leaf-deep);background:#EAF0DD;border:1px solid #D6E2BE;
+       padding:7px 13px;border-radius:999px}
+  .tag.rose{color:var(--rose-deep);background:#FBE7EE;border-color:#F2CCD8}
+  .tag.wine{color:#fff;background:var(--wine);border-color:var(--wine)}
+
+  h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.05}
+  .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .num{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--rose-deep)}
+
+  .sec-head{margin-bottom:clamp(32px,5vw,56px);max-width:760px}
+  .sec-head h2{font-size:clamp(30px,5vw,52px);font-weight:800;margin-top:12px}
+  .sec-head p{margin-top:16px;color:var(--muted);font-size:clamp(14px,1.6vw,16px);line-height:1.65}
+
+  /* фото-фрейм */
+  .frame{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#E9C2CE,#C9D8AE);
+         box-shadow:0 16px 40px rgba(38,33,28,.16)}
+  .frame img{width:100%;height:100%;object-fit:cover}
+  .frame .cap{position:absolute;left:0;right:0;bottom:0;padding:12px 16px;color:#fff;font-size:11.5px;
+              font-weight:600;letter-spacing:.04em;background:linear-gradient(transparent,rgba(0,0,0,.55))}
+
+  /* лёгкая обработка фото под общий визуал */
+  .treated img{filter:saturate(.9) contrast(.96) brightness(1.03)}
+  .treated{box-shadow:0 16px 40px rgba(38,33,28,.16), inset 0 0 0 1px rgba(255,255,255,.22)}
+  .treated::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(160deg,rgba(251,246,239,.16),rgba(224,154,176,.10) 55%,rgba(126,155,87,.08));
+    mix-blend-mode:multiply}
+
+  /* ===== HERO ===== */
+  .hero{padding-top:clamp(48px,8vw,90px);padding-bottom:clamp(64px,10vw,110px)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+  .hero h1{font-size:clamp(40px,7.5vw,80px);font-weight:900;letter-spacing:-.01em;margin-top:18px}
+  .hero h1 em{font-style:italic;color:var(--rose-deep);font-weight:500}
+  .hero .role{margin-top:22px;font-size:clamp(15px,1.8vw,18px);line-height:1.6;color:var(--ink);max-width:46ch}
+  .hero .role b{color:var(--leaf-deep)}
+  .hero-photo{aspect-ratio:4/5;max-width:440px;margin-left:auto}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+  .chip{font-size:13px;font-weight:600;color:var(--ink);background:var(--paper);border:1px solid var(--line);
+        padding:9px 15px;border-radius:999px}
+  .chip.dot::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--leaf);margin-right:8px;vertical-align:middle}
+
+  /* ===== О СЕБЕ ===== */
+  .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,60px);align-items:start}
+  .about-photo{aspect-ratio:4/5}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:26px 0}
+  .fact{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .fact .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .fact .v{font-family:'Playfair Display',serif;font-size:clamp(20px,2.4vw,26px);font-weight:700;margin-top:4px}
+  .lead{font-size:clamp(15px,1.7vw,17px);line-height:1.7;color:var(--ink)}
+  .lead + .lead{margin-top:16px}
+  .lead b{color:var(--leaf-deep)}
+  .quote{background:linear-gradient(135deg,#2E2A24,#3B342C);color:#FBF6EF;border-radius:20px;padding:24px 26px;margin-top:24px}
+  .quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(17px,2vw,21px);line-height:1.45}
+
+  /* ===== УСЛУГИ (ровная сетка, без иконок) ===== */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px 24px 24px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(38,33,28,.12)}
+  .card h3{font-size:20px;font-weight:700;margin-bottom:9px}
+  .card p{font-size:13.5px;line-height:1.6;color:var(--muted)}
+  .card .n{position:absolute;top:18px;right:20px;font-family:'Playfair Display',serif;font-style:italic;font-size:32px;color:var(--line)}
+
+  /* ===== ВИЗУАЛ / ГАЛЕРЕЯ (без подписей) ===== */
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px)}
+  .gallery .frame{aspect-ratio:4/5}
+  .gallery .frame img{object-position:top}
+
+  /* ===== VK ===== */
+  .vk{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,56px);align-items:center}
+  .vk-media{display:flex;flex-direction:column;gap:clamp(14px,2vw,20px)}
+  .vk-media .frame{aspect-ratio:4/5}
+  .vk-media .frame img{object-position:top}
+  .vk ul{list-style:none;margin-top:22px}
+  .vk li{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px dashed var(--line);font-size:14.5px;line-height:1.55}
+  .vk li:last-child{border-bottom:none}
+  .vk li .b{flex:0 0 26px;height:26px;border-radius:8px;background:#EAF0DD;color:var(--leaf-deep);
+            display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px}
+  .vk li b{color:var(--ink)}
+
+  /* ===== ПРОМО ===== */
+  .promo{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,5vw,56px);align-items:center}
+  .promo + .promo{margin-top:clamp(48px,8vw,96px)}
+  .promo.flip{grid-template-columns:1.05fr .95fr}
+  .promo.flip .frame{order:2}
+  .promo.flip .promo-text{order:1}
+  .promo .frame{aspect-ratio:4/5;max-width:460px}
+  .promo h2.big{font-size:clamp(26px,3.6vw,38px);font-weight:800;margin:14px 0}
+  .promo .hook{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(19px,2.4vw,24px);color:var(--rose-deep);line-height:1.3;margin:16px 0}
+  .metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+  .metric{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .metric .t{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .metric .d{font-size:13.5px;margin-top:5px;line-height:1.5}
+
+  /* ===== КОНТАКТЫ ===== */
+  .final{background:linear-gradient(180deg,#FBF6EF,#F4EADF);text-align:center}
+  .final .inner{display:flex;flex-direction:column;align-items:center}
+  .final h2{font-size:clamp(32px,5.5vw,58px);font-weight:900;max-width:18ch;margin-top:0}
+  .final h2 em{font-style:italic;color:var(--rose-deep);font-weight:500}
+  .final p{margin-top:22px;font-size:clamp(15px,1.8vw,18px);color:var(--muted);max-width:54ch;line-height:1.65}
+  .contacts{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:34px}
+  .cbtn{font-size:14.5px;font-weight:700;padding:14px 24px;border-radius:999px;text-decoration:none;transition:transform .2s,opacity .2s}
+  .cbtn:hover{transform:translateY(-2px)}
+  .cbtn.solid{background:var(--ink);color:#fff}
+  .cbtn.solid:hover{opacity:.92}
+  .final .foot{margin-top:48px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+  /* ===== появление при скролле ===== */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ===== адаптив ===== */
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;text-align:left}
+    .hero-photo{margin:8px auto 0;width:100%;max-width:380px}
+    .about{grid-template-columns:1fr}
+    .about-photo{max-width:380px}
+    .gallery{grid-template-columns:1fr 1fr}
+    .vk{grid-template-columns:1fr}
+    .vk-media{flex-direction:row;max-width:560px;margin:0 auto}
+    .promo{grid-template-columns:1fr}
+    .promo .frame{margin:0 auto}
+    .promo.flip{grid-template-columns:1fr}
+    .promo.flip .frame{order:0}
+    .promo.flip .promo-text{order:0}
+  }
+  @media (max-width:560px){
+    .nav-links{display:none}
+    .facts{grid-template-columns:1fr 1fr}
+    .metrics{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr}
+    .vk-media{flex-direction:column}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo">nikita<span>.</span>smm</a>
+    <nav class="nav-links">
+      <a href="#about">Обо мне</a>
+      <a href="#services">Услуги</a>
+      <a href="#visual">Визуал</a>
+      <a href="#vk">ВКонтакте</a>
+      <a href="#case">Кейсы</a>
+    </nav>
+    <a href="https://t.me/nkrvka" class="nav-cta">Написать</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="blob b1"></div><div class="blob b2"></div>
+    <div class="wrap inner">
+      <div class="hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">Никита · 24 · Калининград</span>
+          <h1 class="serif">SMM и&nbsp;контент&#8209;<em>стратегия</em> для цветочного бизнеса</h1>
+          <p class="role">Превращаю ленту цветочного салона в <b>витрину, которая продаёт</b> — от идеи и съёмки до промо‑акции, за которой приходят в точку самовывоза.</p>
+          <div class="chips">
+            <span class="chip dot">От флориста до управляющего сетью</span>
+            <span class="chip">Reels · Сетка · Stories</span>
+            <span class="chip">Threads · Telegram · VK</span>
+            <span class="chip">Промо‑акции</span>
+          </div>
+        </div>
+        <div class="frame hero-photo reveal">
+          <img src="nikita.jpg" alt="Никита с авторским букетом">
+          <div class="cap">Авторский букет · съёмка для профиля</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ОБО МНЕ ===== -->
+  <section id="about">
+    <div class="blob b3"></div>
+    <div class="wrap inner">
+      <div class="sec-head reveal">
+        <span class="num">01 —</span><span class="eyebrow"> Обо мне</span>
+        <h2 class="serif">Знаю цветочный бизнес изнутри</h2>
+      </div>
+      <div class="about">
+        <div class="frame about-photo reveal">
+          <img src="nikita.jpg" alt="Никита">
+        </div>
+        <div class="reveal">
+          <p class="lead">Меня зовут <b>Никита</b>, мне 24, я из Калининграда. В цветы я пришёл не через маркетинг, а через стойку флориста — и прошёл весь путь <b>до управляющего цветочной сетью</b>.</p>
+
+          <div class="facts">
+            <div class="fact"><div class="k">Возраст</div><div class="v">24</div></div>
+            <div class="fact"><div class="k">Город</div><div class="v">Калининград</div></div>
+            <div class="fact"><div class="k">Старт</div><div class="v">Флорист</div></div>
+            <div class="fact"><div class="k">Сейчас</div><div class="v">SMM & стратегия</div></div>
+          </div>
+
+          <p class="lead">Отсюда моя суперсила: я понимаю не только «как красиво снять», но и <b>что именно продаёт</b> — себестоимость стебля, сезонность спроса, какой букет «взрывает» сторис в пятницу вечером и какая акция приведёт людей в магазин, а не просто соберёт лайки.</p>
+
+          <div class="quote">
+            <p>«Я говорю на одном языке и с флористами, и с владельцем бизнеса — контент у меня строится вокруг реальной выручки, а не ради красивых цифр в охватах».</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== УСЛУГИ ===== -->
+  <section id="services" style="background:linear-gradient(180deg,#F4EADF,#FBF6EF)">
+    <div class="blob b1"></div>
+    <div class="wrap inner">
+      <div class="sec-head reveal">
+        <span class="num">02 —</span><span class="eyebrow"> Что я делаю</span>
+        <h2 class="serif">Контент‑система под ключ</h2>
+        <p>Не разовые посты, а выстроенная воронка: от залипательного Reels до сторис с ценой, после которой пишут «заверните».</p>
+      </div>
+      <div class="cards">
+        <div class="card reveal"><div class="n">01</div><h3>Reels & видео</h3><p>Снимаю и монтирую ролики, которые досматривают: сборка букета, распаковка, трендовые переходы и «внутренняя кухня» салона.</p></div>
+        <div class="card reveal"><div class="n">02</div><h3>Сетка профиля</h3><p>Планирую ленту по сезонности, актуальности и трендам — профиль выглядит как витрина премиум‑салона в любой месяц.</p></div>
+        <div class="card reveal"><div class="n">03</div><h3>Stories каждый день</h3><p>Ежедневная публикация актуальных букетов и композиций с ценами и призывом — прямой драйвер продаж «здесь и сейчас».</p></div>
+        <div class="card reveal"><div class="n">04</div><h3>Кросспостинг</h3><p>Дублирую и адаптирую контент в Threads (активная площадка), Telegram и ВКонтакте — максимум охвата без двойной работы.</p></div>
+        <div class="card reveal"><div class="n">05</div><h3>Промо‑акции и спецпроекты</h3><p>Придумываю офлайн‑механики, которые запоминаются, попадают в сторис клиентов и приводят людей в точку самовывоза — см. кейсы ниже.</p></div>
+        <div class="card reveal"><div class="n">06</div><h3>Дизайн‑макеты под бренд</h3><p>Собираю визуал в едином стиле: обложки, шаблоны сторис и хайлайтс, карусели, афиши акций и постеры под даты — чтобы профиль, витрина и реклама выглядели как один бренд.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ВИЗУАЛ ===== -->
+  <section id="visual">
+    <div class="blob b2"></div>
+    <div class="wrap inner">
+      <div class="sec-head reveal">
+        <span class="num">03 —</span><span class="eyebrow"> Визуал профиля</span>
+        <h2 class="serif">Сетка, которая меняется под повод</h2>
+        <p>Один и тот же салон — разное настроение под сезон и под тренд. Держу единый стиль и попадаю в дату: нежная весна к 8 марта, тёплая зима к Новому году, страстный editorial‑красный к 14 февраля — и ровная авторская лента между праздниками.</p>
+      </div>
+      <div class="gallery">
+        <div class="frame treated reveal"><img src="grid_spring.jpg" alt="Сетка профиля — весна / 8 марта"></div>
+        <div class="frame treated reveal"><img src="grid_valentine.jpg" alt="Сетка профиля — 14 февраля"></div>
+        <div class="frame treated reveal"><img src="grid_winter.jpg" alt="Сетка профиля — зима / Новый год"></div>
+        <div class="frame treated reveal"><img src="grid_feed.jpg" alt="Авторская лента — единый стиль"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VK ===== -->
+  <section id="vk" style="background:linear-gradient(180deg,#FBF6EF,#F4EADF)">
+    <div class="blob b3"></div>
+    <div class="wrap inner">
+      <div class="sec-head reveal">
+        <span class="num">04 —</span><span class="eyebrow"> ВКонтакте</span>
+        <h2 class="serif">Профиль и витрина без боли</h2>
+        <p>Контент ведёт в сообщество, где всё работает на доверие и продажу: оформленная шапка, хайлайтс‑витрины и каталог, в котором путь клиента — в один клик.</p>
+      </div>
+      <div class="vk">
+        <div class="reveal">
+          <span class="tag">VK · профиль + товары</span>
+          <ul>
+            <li><span class="b">1</span><div><b>Оформленный профиль.</b> Шапка, аватар, рейтинг, адрес и хайлайтс‑витрины («Свадьба», «Выбрать букет», «Бонусы») — первое впечатление сразу работает на доверие.</div></li>
+            <li><span class="b">2</span><div><b>Понятные карточки товаров.</b> «Авторский букет», «Моно гортензии 17 шт» — клиент видит состав и цену ещё до сообщения.</div></li>
+            <li><span class="b">3</span><div><b>Цены на виду.</b> 2 250 – 8 750 ₽ — снимаем страх «а сколько это стоит?» на входе в каталог.</div></li>
+            <li><span class="b">4</span><div><b>Действие в 1 клик.</b> Кнопки «Написать» и «Позвонить» превращают просмотр в заявку без лишних шагов.</div></li>
+          </ul>
+        </div>
+        <div class="vk-media reveal">
+          <div class="frame treated"><img src="vk_profile.jpg" alt="Профиль сообщества ВКонтакте"></div>
+          <div class="frame treated"><img src="vk_shop.jpg" alt="Товары ВКонтакте — букеты с ценами"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ПРОМО КЕЙСЫ ===== -->
+  <section id="case">
+    <div class="blob b1"></div><div class="blob b2"></div>
+    <div class="wrap inner">
+      <div class="sec-head reveal">
+        <span class="num">05 —</span><span class="eyebrow"> Промо‑кейсы</span>
+        <h2 class="serif">Акции, за которыми приходят в точку</h2>
+        <p>Идея, реализация и подача в одном пакете: механика живёт и офлайн, и в сторис клиентов — и приводит людей в магазин самовывоза.</p>
+      </div>
+
+      <!-- кейс 1 -->
+      <div class="promo reveal">
+        <div class="frame treated"><img src="promo_sept.jpg" alt="Яблоко с биркой — акция 1 сентября"></div>
+        <div class="promo-text">
+          <span class="tag wine">Спецпроект · 1 сентября</span>
+          <h2 class="serif big">Яблоко с&nbsp;биркой каждому школьнику</h2>
+          <p class="hook">«Грызи гранит науки, как это яблоко!»</p>
+          <p class="lead">При самовывозе букета каждый школьник получает зелёное яблоко с фирменной биркой и логотипом. Копеечная себестоимость — и огромный эмоциональный бонус, который хочется сфотографировать и выложить в сторис.</p>
+          <div class="metrics">
+            <div class="metric"><div class="t">Цель</div><div class="d">Повод купить букет учителю + радость ребёнку</div></div>
+            <div class="metric"><div class="t">Механика</div><div class="d">Выдача при самовывозе — трафик в точку</div></div>
+            <div class="metric"><div class="t">Эффект</div><div class="d">UGC: клиенты сами снимают бирку в сторис</div></div>
+            <div class="metric"><div class="t">Бренд</div><div class="d">Логотип на бирке = запоминаемость</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- кейс 2 -->
+      <div class="promo flip reveal">
+        <div class="frame treated"><img src="promo_mom.jpg" alt="Постер коллекции ко Дню мамы"></div>
+        <div class="promo-text">
+          <span class="tag wine">Спецпроект · День мамы</span>
+          <h2 class="serif big">Коллекция букетов, а&nbsp;не&nbsp;одна картинка</h2>
+          <p class="hook">День мамы — повод, где выбирают эмоцию, а не стебли</p>
+          <p class="lead">К празднику я собрал не разовый пост, а целую тематическую коллекцию: сняли модель на фоне витрины букетов, упаковали всё в единый постер с логотипом и адресом сайта и подали как подборку‑историю. Клиент не мучается «что подарить» — он листает коллекцию и выбирает настроение: нежность, классику или яркий акцент. Так букет становится готовым решением, а пост — витриной, с которой хочется купить.</p>
+          <div class="metrics">
+            <div class="metric"><div class="t">Идея</div><div class="d">Тематическая коллекция под дату вместо разрозненных позиций</div></div>
+            <div class="metric"><div class="t">Реализация</div><div class="d">Съёмка модели + единый постер с логотипом и сайтом</div></div>
+            <div class="metric"><div class="t">Подача</div><div class="d">Анонс‑подборка в сторис и ленте — клиент выбирает эмоцию</div></div>
+            <div class="metric"><div class="t">Результат</div><div class="d">Готовое «решение под подарок» и рост предзаказов к дате</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== КОНТАКТЫ ===== -->
+  <section id="contacts" class="final">
+    <div class="blob b1"></div><div class="blob b3"></div>
+    <div class="wrap inner">
+      <h2 class="serif reveal">Давайте сделаем так, чтобы ваш салон <em>продавал</em></h2>
+      <p class="reveal">Контент‑стратегия, съёмка и промо‑акции для цветочного бизнеса — от идеи до выручки.</p>
+      <div class="contacts reveal">
+        <a class="cbtn solid" href="https://t.me/nkrvka">Написать в Telegram · @nkrvka</a>
+      </div>
+      <div class="foot reveal">Никита · Калининград · @nkrvka</div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // плавное появление блоков при скролле
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in')}); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    },{threshold:.14, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+</script>
+</body>
+</html>
